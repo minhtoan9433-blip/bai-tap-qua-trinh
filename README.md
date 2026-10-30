@@ -2,7 +2,7 @@
 
 **Sinh viên:** Lưu Minh Toàn — **MSSV:** 23458018.
 
-Hoàn thiện từ [repo gốc](https://github.com/minhtoan9433-blip/KHOA-HOC-MAU-SAC), bản tải về ở commit `a089e01`. Chỉ chạy localhost, không cần deploy hay tài khoản dịch vụ. Logo trường lấy từ website HCMUTE do người dùng cung cấp; logo Khoa In và Truyền thông lấy từ tài liệu nhận diện chính thức của khoa. Nguồn ở `assets/SOURCES.md`.
+Hoàn thiện từ [repo gốc](https://github.com/minhtoan9433-blip/KHOA-HOC-MAU-SAC), bản tải về ở commit `a089e01`. Có thể chạy localhost hoặc triển khai trên Streamlit Community Cloud. Logo trường lấy từ website HCMUTE do người dùng cung cấp; logo Khoa In và Truyền thông lấy từ tài liệu nhận diện chính thức của khoa. Nguồn ở `assets/SOURCES.md`.
 
 **Dành cho giảng viên:** mở thư mục `pages` để xem tám file Python theo từng bài. Phần tính toán và giao diện của mỗi bài nằm trực tiếp trong file đó. Bảng đối chiếu file và hàm cần xem nằm trong [HUONG_DAN_XEM_CODE.md](HUONG_DAN_XEM_CODE.md).
 
@@ -29,6 +29,16 @@ py -3.12 -m venv .venv
 Nếu dùng uv: `uv venv --python 3.12`, sau đó `uv pip install -r requirements.txt`.
 
 Môi trường `.venv` không đưa vào file nộp; cần cài lại trên máy khác. Sau khi đã cài thư viện, các phép tính, dữ liệu mẫu và logo hoạt động offline.
+
+## Chạy trên Streamlit Community Cloud
+
+- Chọn repo `minhtoan9433-blip/bai-tap-qua-trinh`, nhánh `main`, file chạy `app.py` (file `Khoa học Màu sắc.py` vẫn được hỗ trợ).
+- Trong **Advanced settings**, chọn **Python 3.12**. Bộ phiên bản trong `requirements.txt` dùng được với Python 3.11–3.13; `colour-science==0.4.6` không hỗ trợ Python 3.14.
+- Cloud phải cài `requirements.txt` ở thư mục gốc. Lệnh `import colour` thuộc gói **`colour-science`**, không phải gói `colour`.
+- Nếu gặp `ModuleNotFoundError` tại `import colour`, mở **Manage app → Logs** để kiểm tra bước cài phụ thuộc, xác nhận đúng repo/nhánh rồi **Reboot app** sau khi cập nhật. Nếu cần đổi Python, triển khai lại theo hướng dẫn của Streamlit.
+- Không cài thư viện bằng `pip` bên trong mã ứng dụng. Cloud quản lý thư viện từ `requirements.txt`.
+
+Tài liệu: [Phụ thuộc ứng dụng](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/app-dependencies), [đổi phiên bản Python](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/upgrade-python).
 
 ## Đối chiếu yêu cầu đề
 
@@ -72,4 +82,4 @@ $env:MPLCONFIGDIR = "$PWD/.mpl-cache"
 
 11 bài kiểm tra gồm: chuyển đổi trắng sRGB và hai chiều, vật phản xạ hoàn hảo Y=100, dữ liệu CSV lỗi, miền band, đầu mút TRC, cặp tham chiếu ΔE00, thực thi mọi trang bằng Streamlit AppTest và các chế độ tương tác. Có thể xuất hiện cảnh báo `missing ScriptRunContext` khi AppTest chạy; đây là cảnh báo của môi trường kiểm tra.
 
-Mã số sinh viên được giữ từ repo gốc. Bản sửa nằm trong thư mục local; chưa đẩy thay đổi lên GitHub.
+Mã số sinh viên được giữ từ repo gốc. Mã nguồn và khai báo thư viện được lưu trong repo GitHub.
