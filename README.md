@@ -13,7 +13,7 @@ Mở `run.bat`, giữ cửa sổ đó trong khi dùng ứng dụng, rồi truy c
 Hoặc mở PowerShell tại thư mục bài tập:
 
 ```powershell
-.\.venv\Scripts\python.exe -m streamlit run app.py
+.\.venv\Scripts\python.exe -m streamlit run "Khoa học Màu sắc.py"
 ```
 
 ## Cài lại / chạy trên máy khác
@@ -23,7 +23,7 @@ Cài Python 3.12, mở terminal trong thư mục project rồi chạy:
 ```powershell
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe -m streamlit run app.py
+.\.venv\Scripts\python.exe -m streamlit run "Khoa học Màu sắc.py"
 ```
 
 Nếu dùng uv: `uv venv --python 3.12`, sau đó `uv pip install -r requirements.txt`.
@@ -32,7 +32,7 @@ Môi trường `.venv` không đưa vào file nộp; cần cài lại trên máy
 
 ## Chạy trên Streamlit Community Cloud
 
-- Chọn repo `minhtoan9433-blip/bai-tap-qua-trinh`, nhánh `main`, file chạy `app.py` (file `Khoa học Màu sắc.py` vẫn được hỗ trợ).
+- Chọn repo `minhtoan9433-blip/bai-tap-qua-trinh`, nhánh `main`, Main file path: `Khoa học Màu sắc.py`. Đây là file chính chứa phần đăng ký và điều hướng các bài; `app.py` chỉ là lối chạy tương thích.
 - Trong **Advanced settings**, chọn **Python 3.12**. Bộ phiên bản trong `requirements.txt` dùng được với Python 3.11–3.13; `colour-science==0.4.6` không hỗ trợ Python 3.14.
 - Cloud phải cài `requirements.txt` ở thư mục gốc. Lệnh `import colour` thuộc gói **`colour-science`**, không phải gói `colour`.
 - Nếu gặp `ModuleNotFoundError` tại `import colour`, mở **Manage app → Logs** để kiểm tra bước cài phụ thuộc, xác nhận đúng repo/nhánh rồi **Reboot app** sau khi cập nhật. Nếu cần đổi Python, triển khai lại theo hướng dẫn của Streamlit.

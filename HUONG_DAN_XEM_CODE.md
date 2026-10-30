@@ -28,7 +28,8 @@ Các file bài tập gọi thư viện `colour-science` cho các phép chuyển 
 
 ## Những file hỗ trợ
 
-- `app.py`: đăng ký trang chủ và tám trang bài tập, giữ thứ tự 1–8.
+- `Khoa học Màu sắc.py`: file chính để chạy/deploy; đăng ký trang chủ và tám trang bài tập, giữ thứ tự 1–8.
+- `app.py`: chuyển tiếp đến file chính để tương thích với cấu hình chạy cũ.
 - `core.py`: chỉ còn đường dẫn project, hàm phối màu CIE dùng chung, điểm trắng và hàm hiển thị sRGB.
 - `ui.py`: định dạng trang, ô màu, kết quả số và tải biểu đồ PNG.
 - `assets/`: logo và tài liệu nguồn nhận diện.
