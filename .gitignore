@@ -1,0 +1,16 @@
+.venv/
+.uv-cache/
+__pycache__/
+*.pyc
+upstream/
+source.zip
+repo-info.json
+*.log
+.pytest_cache/
+.mpl-cache/
+school.html
+faculty.html
+identity.html
+departments.js
+.test-tmp/
+BAI_TAP_KHOA_HOC_MAU_SAC.zip
