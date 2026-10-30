@@ -1,8 +1,8 @@
-# Streamlit Cloud: install this file with Python 3.12.
+# Supports Python 3.11-3.14, including Streamlit Cloud Python 3.14.
 # The Python module "colour" comes from colour-science, not the package "colour".
-streamlit==1.50.0
+streamlit==1.66.1
 matplotlib==3.10.7
-colour-science==0.4.6
-numpy==2.2.6
+colour-science==0.4.7
+numpy==2.3.5
 pandas==2.3.3
 scipy==1.16.3

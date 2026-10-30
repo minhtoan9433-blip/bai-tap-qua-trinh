@@ -18,24 +18,24 @@ Hoặc mở PowerShell tại thư mục bài tập:
 
 ## Cài lại / chạy trên máy khác
 
-Cài Python 3.12, mở terminal trong thư mục project rồi chạy:
+Cài Python 3.14, mở terminal trong thư mục project rồi chạy:
 
 ```powershell
-py -3.12 -m venv .venv
+py -3.14 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe -m streamlit run "Khoa học Màu sắc.py"
 ```
 
-Nếu dùng uv: `uv venv --python 3.12`, sau đó `uv pip install -r requirements.txt`.
+Nếu dùng uv: `uv venv --python 3.14`, sau đó `uv pip install -r requirements.txt`.
 
 Môi trường `.venv` không đưa vào file nộp; cần cài lại trên máy khác. Sau khi đã cài thư viện, các phép tính, dữ liệu mẫu và logo hoạt động offline.
 
 ## Chạy trên Streamlit Community Cloud
 
 - Chọn repo `minhtoan9433-blip/bai-tap-qua-trinh`, nhánh `main`, Main file path: `Khoa học Màu sắc.py`. Đây là file chính chứa phần đăng ký và điều hướng các bài; `app.py` chỉ là lối chạy tương thích.
-- Trong **Advanced settings**, chọn **Python 3.12**. Bộ phiên bản trong `requirements.txt` dùng được với Python 3.11–3.13; `colour-science==0.4.6` không hỗ trợ Python 3.14.
+- Bộ thư viện hỗ trợ **Python 3.11–3.14**. Nếu Cloud mặc định dùng **Python 3.14**, giữ nguyên lựa chọn đó; không cần đổi trong Advanced settings. Nếu ứng dụng hiện đang dùng Python 3.12 thì vẫn có thể tiếp tục dùng.
 - Cloud phải cài `requirements.txt` ở thư mục gốc. Lệnh `import colour` thuộc gói **`colour-science`**, không phải gói `colour`.
-- Nếu gặp `ModuleNotFoundError` tại `import colour`, mở **Manage app → Logs** để kiểm tra bước cài phụ thuộc, xác nhận đúng repo/nhánh rồi **Reboot app** sau khi cập nhật. Nếu cần đổi Python, triển khai lại theo hướng dẫn của Streamlit.
+- Nếu gặp `ModuleNotFoundError` tại `import colour`, mở **Manage app → Logs** để kiểm tra bước cài phụ thuộc, xác nhận đúng repo/nhánh rồi **Reboot app** sau khi cập nhật. Với bản phụ thuộc này, không cần triển khai lại chỉ để hạ Python 3.14 xuống 3.12.
 - Không cài thư viện bằng `pip` bên trong mã ứng dụng. Cloud quản lý thư viện từ `requirements.txt`.
 
 Tài liệu: [Phụ thuộc ứng dụng](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/app-dependencies), [đổi phiên bản Python](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/upgrade-python).
